@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Raccoon Taco Shop</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <style>
+            #menu, #take-order {
+                display: flex;
+                flex-direction: row;
+            }
+
+            #take-order > p {
+                padding-right: 10px;
+            }
+
+            .menu-item {
+                border: 3px solid gray;
+            }
+
+            .menu-item > h4,
+            .menu-item > img {
+                padding: 10px;
+                padding-bottom: 5px;
+            }
+
+            img {
+                width: 250px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="all-contents">
+            <nav>
+                <h1>Raccoon Taco Shop</h1>
+                <div id="take-order">
+                    <p>When you're ready to place your order, click here: </p>
+                    <button>Place Order</button>
+                </div>
+            </nav>
+            <main>
+                <h3>Menu</h3>
+                <div id="menu">
+                    <div id="three-tacos" class="menu-item">
+                        <h4> #1 - Three Tacos</h4>
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSG-phbs_RqH7HoN_2XLKiTXd0zTOeMGLncug&usqp=CAU">
+                        <h4>$6.99</h4>
+                    </div>
+                    <div id= "Raccoon" class="menu-item">
+                        <h4> #2 - Crab Raccoon</h4>
+                        <img src="https://i.kym-cdn.com/photos/images/facebook/001/724/616/bf7.jpg">
+                        <h4>$6.69</h4>
+                    </div>
+                    <div id= "Shrimp Cocktail" class="menu-item">
+                        <h4> #3 - Shrimp Cocktail </h4>
+                        <img src="https://www.pacificseafood.com/pac-incoming/2018/05/Recipe_Mexican_Shrimp_Cocktail.jpg">
+                        <h4>$5.99</h4>
+                    </div>
+                    <div id="five-tacos" class="menu-item">
+                        <h4>#4 - Five Tacos</h4>
+                        <img src="https://i2.wp.com/thesuburbansoapbox.com/wp-content/uploads/2021/02/Birria-Tacos-8.jpg">
+                        <h4>$9.99</h4>
+                    </div>
+                </div>
+            </main>
+        </div>
+        <script>
+        $('button').on('click', whatWouldYouLike);
+        function whatWouldYouLike(){ 
+            console.log('food');
+        var total = 0;
+        var whatWouldYouLike = prompt('What scrumptious thing would you like fellow raccoon lover :)');
+        if (whatWouldYouLike === '1') {
+            total += 6.99; 
+        }
+        else if (whatWouldYouLike === '2') {
+            total += 6.69; 
+    
+        }
+        else if (whatWouldYouLike === '3') {
+            total += 5.99;
+
+        }
+        else if (whatWouldYouLike === '4') {
+            total += 9.99; 
+        }
+        else if (whatWouldYouLike === 'I hate raccoons'){
+            alert('Get out of raccoon town!');
+        }
+        else {
+            alert('That is not an option silly!'); 
+        }
+        alert('The total will be ' + total + '. Thank you for visiting the Raccoon Taco Shop!'); 
+    }
+        
+        </script>
+    </body>
+</html>
