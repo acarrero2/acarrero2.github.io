@@ -6,10 +6,43 @@
 <head>
 
     <meta charset="UTF-8">
-    <title>Catsagram</title>
-    <link rel="icon" type="image/png" href="favicon.ico">
+    <title>Raccoonagram</title>
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/1998/1998767.png">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="./javascript/brains.js"></script>
+    <style>
+        .brand-font {
+            font-style: italic;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: xx-large;
+            color: #b19cd8;
+
+        }
+
+        img {
+            width: 300px;
+        }
+
+        .caption {
+            margin-bottom: 70px;
+            color: #b19cd8;
+            font-style: oblique;
+            font-size: larger;
+        }
+
+        .pic-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        body {
+            background-image: url(https://i.gifer.com/cfr.gif);
+            background-size: 150px;
+        }
+    </style>
 
 </head>
 
@@ -17,44 +50,48 @@
 
 <body>
 
-    <h1>Raccoonagram</h1>
-    <h5>Sharing the World's Raccoons</h5>
-    <!--Raccoon Photo 1-->
-    <img src="https://i.pinimg.com/originals/8b/22/de/8b22de0690b179400541988a6d8c6de5.jpg">
+    <h1 class="brand-font">Raccoonagram</h1>
+    <h5 class="brand-font">Sharing the World's Raccoons</h5>
+    <!--PICTURE CONTAINER-->
+    <div class="pic-container">
 
-    <!--comment and like buttons-->
-    <div id="likeCount1"></div>
-   
-    <button id="likeBtn">Like</button> 
-    <p>Feeling cute today, might eat trash later idk</p>
+        <!--Raccoon Photo 1-->
+        <img src="https://i.pinimg.com/originals/8b/22/de/8b22de0690b179400541988a6d8c6de5.jpg">
 
-    <!--Raccoon Photo 2-->
-    <img src="https://i.pinimg.com/474x/f3/bc/35/f3bc355ccf5a9a56b3ffd19fdf9691ea.jpg">
-    <div id="likeCount2"></div>
-   
-    <button id="likeBtn">Like</button> 
-    <p>Lazy day :)</p>
+        <!--comment and like buttons-->
+        <div id="likeCount1"></div>
 
-    <!--Raccoon Photo 3-->
-    <img src="https://static.boredpanda.com/blog/wp-content/uploads/2021/08/clipimage-611a0de7d6bc7__700.jpg">
-    <div id="likeCount3"></div>
-   
-    <button id="likeBtn">Like</button>
-    <p>It cold</p>
+        <button id="likeBtn">Like</button>
+        <p class="caption">Feeling cute today, might eat trash later idk</p>
 
-    <!--Raccoon Photo 4-->
-    <img src="https://c.tenor.com/7JiVC7R_dVYAAAAC/racoon-funny-animals.gif">
-    <div id="likeCount4"></div>
-   
-    <button id="likeBtn">Like</button>
-    <p>Just ate neighbors trash hehe</p>
+        <!--Raccoon Photo 2-->
+        <img src="https://i.pinimg.com/474x/f3/bc/35/f3bc355ccf5a9a56b3ffd19fdf9691ea.jpg">
+        <div id="likeCount2"></div>
 
-    <!--Raccoon Photo 5-->
-    <img src="https://i.redd.it/cquh4df903271.jpg">
-    <div id="likeCount5"></div>
-   
-    <button id="likeBtn">Like</button>
-<p>Do u like my painting</p>
+        <button id="likeBtn">Like</button>
+        <p class="caption">Lazy day :)</p>
+
+        <!--Raccoon Photo 3-->
+        <img src="https://static.boredpanda.com/blog/wp-content/uploads/2021/08/clipimage-611a0de7d6bc7__700.jpg">
+        <div id="likeCount3"></div>
+
+        <button id="likeBtn">Like</button>
+        <p class="caption">It cold</p>
+
+        <!--Raccoon Photo 4-->
+        <img src="https://c.tenor.com/7JiVC7R_dVYAAAAC/racoon-funny-animals.gif">
+        <div id="likeCount4"></div>
+
+        <button id="likeBtn">Like</button>
+        <p class="caption">Just ate neighbors trash hehe</p>
+
+        <!--Raccoon Photo 5-->
+        <img src="https://i.redd.it/cquh4df903271.jpg">
+        <div id="likeCount5"></div>
+
+        <button id="likeBtn">Like</button>
+        <p class="caption">Do u like my painting</p>
+    </div>
 </body>
 
 </html>
