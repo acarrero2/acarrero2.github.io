@@ -6,7 +6,7 @@ function likePhoto(num) {
 }
 var user = {
     "name": "Angelina",
-    "name_last": "Carrero",
+    "name_last": "Carrero ☑️",
     "followers": ["raccoon", "raccoon", "raccoon", "raccoon", "raccoon", "raccoon", "raccoon", "raccoon", "raccoon", "raccoon"],
     "profile_pic": "https://i.pinimg.com/originals/42/b1/79/42b1795ed414b1dcaae150145e0ca537.jpg",
 
