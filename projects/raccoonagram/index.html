@@ -42,6 +42,25 @@
             background-image: url(https://i.gifer.com/cfr.gif);
             background-size: 150px;
         }
+        #profile_pic    {
+            border-radius: 500px;
+            
+        }
+        #name {
+            font-style: italic;
+            font-size: x-large;
+            color: black;
+        }
+        #name_last {
+            font-style: italic;
+            font-size: x-large;
+            color: black;
+        }
+        #followers {
+            font-style: italic;
+            font-size: x-large;
+            color: black;
+        }
     </style>
 
 </head>
@@ -52,6 +71,10 @@
 
     <h1 class="brand-font">Raccoonagram</h1>
     <h5 class="brand-font">Sharing the World's Raccoons</h5>
+    <div id="name"></div>
+    <div id="name_last"></div>
+    <div id="followers"></div>
+    <img id="profile_pic">
     <!--PICTURE CONTAINER-->
     <div class="pic-container">
 
@@ -59,37 +82,37 @@
         <img src="https://i.pinimg.com/originals/8b/22/de/8b22de0690b179400541988a6d8c6de5.jpg">
 
         <!--comment and like buttons-->
-        <div id="likeCount1"></div>
+        <div id="likeCount0"></div>
 
-        <button id="likeBtn">Like</button>
+        <button id="likeBtn0" onclick="likePhoto(0)">Like</button>
         <p class="caption">Feeling cute today, might eat trash later idk</p>
 
         <!--Raccoon Photo 2-->
         <img src="https://i.pinimg.com/474x/f3/bc/35/f3bc355ccf5a9a56b3ffd19fdf9691ea.jpg">
-        <div id="likeCount2"></div>
+        <div id="likeCount1"></div>
 
-        <button id="likeBtn">Like</button>
+        <button id="likeBtn1" onclick="likePhoto(1)">Like</button>
         <p class="caption">Lazy day :)</p>
 
         <!--Raccoon Photo 3-->
         <img src="https://static.boredpanda.com/blog/wp-content/uploads/2021/08/clipimage-611a0de7d6bc7__700.jpg">
-        <div id="likeCount3"></div>
+        <div id="likeCount2"></div>
 
-        <button id="likeBtn">Like</button>
+        <button id="likeBtn2" onclick="likePhoto(2)">Like</button>
         <p class="caption">It cold</p>
 
         <!--Raccoon Photo 4-->
         <img src="https://c.tenor.com/7JiVC7R_dVYAAAAC/racoon-funny-animals.gif">
-        <div id="likeCount4"></div>
+        <div id="likeCount3"></div>
 
-        <button id="likeBtn">Like</button>
+        <button id="likeBtn3" onclick="likePhoto(3)">Like</button>
         <p class="caption">Just ate neighbors trash hehe</p>
 
         <!--Raccoon Photo 5-->
         <img src="https://i.redd.it/cquh4df903271.jpg">
-        <div id="likeCount5"></div>
+        <div id="likeCount4"></div>
 
-        <button id="likeBtn">Like</button>
+        <button id="likeBtn4" onclick="likePhoto(4)">Like</button>
         <p class="caption">Do u like my painting</p>
     </div>
 </body>
