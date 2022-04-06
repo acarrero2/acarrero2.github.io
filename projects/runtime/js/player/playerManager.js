@@ -75,7 +75,7 @@
                 player.die();
                 setTimeout(function() {
                     document.location.reload()
-                    alert("press enter to start over");
+                    alert("Wow you gave up , start again you loser");
                 }, 1100);
             } else if (activeKeys[KEYCODE_DOWN]) {
                 player.duckin();
