@@ -19,14 +19,12 @@ var level01 = function (window) {
                 { "type": "sawblade", "x": 200, "y": groundY },
                 { "type": "sawblade", "x": 900, "y": groundY },
                 { "type": "sawblade", "x": 700, "y": groundY },
-                { 'type': 'enemy', 'x': 400, 'y': groundY - 20 },
-                { 'type': 'enemy', 'x': 800, 'y': groundY - 70 },
-                { 'type': 'enemy', 'x': 1200, 'y': groundY - 50 },
-                { 'type': 'reward', 'x': 1600, 'y': groundY - 50 },
-                { 'type': 'obstacle', 'x': 1600, 'y': 325 },
             ]
-        
+           
+    
         };
+       
+
         window.levelData = levelData;
         // set this to true or false depending on if you want to see hitzones
         game.setDebugMode(false);
