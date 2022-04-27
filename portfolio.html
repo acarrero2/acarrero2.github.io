@@ -1,0 +1,151 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>Angelina's Amazing Website</title>
+    <style type="text/css">
+        body {
+            background-image: url(https://i.gifer.com/cfr.gif);
+            background-size: 150px;
+            color: rgb(45, 45, 45);
+            padding: 10px;
+            font-family: 'Trebuchet MS';
+        }
+
+        header {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        #all-contents {
+            max-width: 800px;
+            margin: auto;
+        }
+
+        /* navigation menu */
+        nav {
+            background: #a48bc0;
+            margin: center;
+            display: flex;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        h1 {
+            display: flex;
+            align-items: center;
+            color: rgb(255, 255, 255);
+            flex: 1;
+            margin: 0;
+        }
+
+        #nav-ul {
+            list-style-image: none;
+        }
+
+        .nav-li {
+            display: inline-block;
+            padding: 0 10px;
+
+        }
+
+        .nav-a {
+            text-decoration: none;
+            color: #fff;
+
+        }
+
+        /* main container area beneath menu */
+        main {
+           
+            display: flex;
+            border-radius: 10px;
+            height: 500px;
+            width: 843px;
+            background-size: 40px;
+            margin-left: -20px;
+        }
+
+        .content {
+            flex: 1;
+            padding: 15px;
+        }
+
+        /* portfolio styles */
+        .content h1 {
+            color: rgb(0, 0, 0);
+            width: 135px;
+            background-color: #f0cff5;
+            border: solid;
+            border-radius: 10px;
+            border-color: rgb(45, 45, 45);
+            
+            
+        }
+
+        #portfolio {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        #portfolio li {
+            background: #f0cff5;
+            padding: 10px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            border:solid
+        }
+
+        #portfolio li:hover {
+            background: #a48bc0;
+        }
+
+        #portfolio a {
+            text-decoration: none;
+            color: #000000;
+        }
+        a:hover {
+    
+    color:pink;
+}
+a {
+    color:white;
+}
+    </style>
+     <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/1998/1998767.png">
+</head>
+
+<body>
+    <div id="all-contents">
+        <nav>
+            <h1>Angelina's Amazing Website</h1>
+            <ul id="nav-ul">
+                <li class="nav-li">
+                    <a class="nav-a" href="index.html">Home 🏠</a>
+                </li>
+                <li class="nav-li">
+                    <a class="nav-a" href="portfolio.html">Portfolio 📁</a>
+                </li>
+                
+            </ul>
+        </nav>
+        <main>
+            <div class="content">
+                <h1> Portfolio</h1>
+                <ul id="portfolio">
+                    <li><a href="projects/platformer/">Platformer : A cannon - dodging, collectible - grabbing adventure
+                            game for Halleb0t 🎮 </a></li>
+                    <li><a href="projects/bouncing-box/">Bouncing Box : A project that gives you a taste of game
+                            development on the web 📦</a></li>
+                    <li><a href="projects/circularity/">Circularity : A motion poem using random number generation and
+                            velocity applied to circle shapes... ⚪</a></li>
+                    <li><a href="simulations/taco-shop/">Raccoon Taco Shop: A taco shop that is serving very yummy food 🦝🌮 </a></li>
+                    <li><a href="projects/raccoonagram/">Raccoonagram: The profile of a famous Raccoon on Raccoonagram 🦝📷</a></li>
+                    <li><a href="projects/runtime/">Runtime: Running through time away from the enemy.....</a></li>
+                    <li><a href="projects/clicker-chaos/index.html"> Clicker Chaos: click a lot</a></li>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>
