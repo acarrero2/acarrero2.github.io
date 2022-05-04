@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="index.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <h1>Raccoon Clicker</h1>
+    <!-- <div class="top-box"> -->
+    <div class="main-box">
+        <div class="clicker-box">
+            <img id="clicker-image" src="https://stickershop.line-scdn.net/stickershop/v1/product/17975401/LINEStorePC/main.png;compress=true">
+            <p id="raccoon-amount"> Raccoons: 0 captured</p>
+            <p id="raccoonPerSecond"> Raccoons per second: 0 captured</p>
+        </div>
+        <div class="autoclicker-box">
+
+            <div class="autoclicker" id="autoclicker1">
+                <p>Marshmallow</p>
+                <p id="marshmallow-count">Owned: 0</p>
+                <p id="marshmallow-cost">Cost: 10</p>
+                <button class='button' id="purchase-marshmallow">YUMMY!</button>
+            </div>
+
+            <div class="autoclicker" id="autoclicker2">
+               <p>Raccoon Plushy</p>
+                <p id="raccoon-plushy-count">Owned: 0</p>
+                <p id="raccoon-plushy-cost">Cost: 100</p>
+                <button class='button' id="purchase-raccoon-plushy">AWWW </button>
+            </div>
+
+            <div class="autoclicker" id="autoclicker3">
+                <p>Hot Dog</p>
+                <p id="hot-dog-count">Owned: 0</p>
+                <p id="hot-dog-cost">Cost: 800</p>
+                <button class='button' id="purchase-hot-dog">OUHH</button>
+            </div>
+
+            <div class="autoclicker" id="autoclicker4">
+                <p>Raccoon Ball</p>
+                <p id="raccoon-ball-count">Owned: 0</p>
+                <p id="raccoon-ball-cost">Cost: 1500</p>
+                <button class='button' id="purchase-raccoon-ball">FUNNN</button>
+            </div>
+
+        </div>
+
+        <div class="upgrade-box">
+
+           
+            <div class="upgrade" id="upgrade1">
+                <p>Raccoon Fingers</p>
+                <button id='raccoon-fingers-info' class="upgrade-info">🛈</button>
+                <button id='purchase-raccoon-fingers' class="purchase-upgrade">SUPA FAST</button>
+            </div>
+
+            
+            <div class="upgrade" id="upgrade3">
+                <p>Raccoon Family</p>
+                <button id='raccoon-family-info' class="upgrade-info">🛈</button>
+                <button id='purchase-raccoon-family' class="purchase-upgrade">YAYY</button>
+            </div>
+
+
+            <div class="upgrade" id="upgrade2">
+                <p>CHUNKY RACCOON</p>
+                <button id='chunky-raccoon-info' class='upgrade-info'>🛈</button>
+                <button id='purchase-chunky-raccoon' class="purchase-upgrade">BUY!</button>
+            </div>
+
+        </div>
+    </div>
+    <!-- <div class="credits">
+
+            </div> -->
+    <!-- </div> -->
+    <script>
+        $("#clicker-image").on("click", catchRaccoon);
+
+        // Variables
+        var raccoon = 0;
+        var raccoonPerSecond = 0;
+        var click = 1
+        // clickers
+        var marshmallow = {
+            rps: 1,
+            numberOwned: 0,
+            basePrice: 10,
+        };
+        var raccoonPlushy = {
+            rps: 2,
+            numberOwned: 0,
+            basePrice: 100,
+        };
+        var hotDog = {
+            rps: 10,
+            numberOwned: 0,
+            basePrice: 800,
+        };
+        var raccconBall = {
+            rps: 50,
+            numberOwned: 0, 
+            basePrice: 1500,
+        };
+
+        var raccoonFingersCost = 300
+        var raccoonFamilyCost = 1000
+        var chunkyRaccoonCost = 3000
+
+
+        setInterval(addAutoRaccoon, 1000);
+
+    
+
+        $("#purchase-marshmallow").on("click", purchaseMarshmallow);
+        $("#purchase-raccoon-plushy").on('click', purchaseRaccoonPlushy);
+        $("#purchase-hot-dog").on('click', purchaseHotDog);
+        $("#purchase-raccoon-ball").on('click', purchaseRaccoonBall);
+        $("#purchase-raccoon-fingers").on('click', purchaseRaccoonFingers)
+        $("#raccoon-fingers-info").on('click', raccoonFingersAlert)
+        $("#purchase-raccoon-family").on('click', purchaseRaccoonFamily)
+        $("#raccoon-family-info").on('click', raccoonFamilyAlert)
+        $("#purchase-chunky-raccoon").on('click', purchaseChunkyRaccoon)
+        $("#chunky-raccoon-info").on('click', chunkyRaccoonAlert)
+      
+        function catchRaccoon() {
+            raccoon += click
+            $("#raccoon-amount").text("Raccoons: " + raccoon + " captured");
+
+        }
+
+        function purchaseMarshmallow() {
+
+            var marshmallowCost = Math.ceil(marshmallow.basePrice * Math.pow(1.15, marshmallow.numberOwned));
+            console.log(raccoonPerSecond, marshmallow.rps)
+            if (raccoon >= marshmallowCost) {
+               
+                raccoon -= marshmallowCost
+    
+                raccoonPerSecond += marshmallow.rps
+                console.log(raccoonPerSecond)
+                
+                marshmallow['numberOwned']++
+        
+                $("#marshmallow-count").text("Owned: " + marshmallow.numberOwned); 
+                $("#marshmallow-cost").text("Cost: " + marshmallowCost);
+                $("#raccoonPerSecond").text("Raccoons per second: " + Math.ceil(raccoonPerSecond) + " captured");
+        
+                var marshmallowNewCost = Math.ceil(marshmallow.basePrice * Math.pow(1.1, marshmallow.numberOwned));
+                $('#marshmallow-cost').text("Cost: " + marshmallowCost);
+            }
+        }
+
+        function purchaseRaccoonPlushy() {
+            var plushyCost = Math.ceil(raccoonPlushy.basePrice * Math.pow(1.15, raccoonPlushy.numberOwned));
+            console.log(raccoonPerSecond, raccoonPlushy.rps)
+            if (raccoon >= plushyCost) {
+                raccoon -= plushyCost
+                raccoonPerSecond += raccoonPlushy.rps
+                console.log(raccoonPerSecond)
+                raccoonPlushy['numberOwned']++
+
+              
+                $("#raccoon-plushy-count").text("Owned: " + raccoonPlushy.numberOwned); 
+                $("#raccoon-plushy-cost").text("Cost: " + raccoonPlushyCost);
+                $("#raccoonPerSecond").text("Raccoons per second: " + Math.ceil(raccoonPerSecond) + " captured");
+               
+                var newRaccoonPlushyCost = Math.ceil(raccoonPlushy.basePrice * Math.pow(1.115, raccoonPlushy.numberOwned));
+                $('#raccoon-plushy-cost').text("Cost: " + newRaccoonPlushyCost);
+            }
+        }
+        function purchaseHotDog() {
+            var hotDogCost = Math.ceil(hotDog.basePrice * Math.pow(1.115, hotDog.numberOwned));
+            if (raccoon >= hotDogCost) {
+                console.log(raccoonPerSecond, hotDog.rps)
+                
+                raccoon -= hotDogCost
+                
+                raccoonPerSecond += hotDog.rps
+                console.log(raccoonPerSecond)
+               
+                hotDog['numberOwned']++
+               
+                $("#hot-dog-count").text("Owned: " + hotDog.numberOwned); 
+                $("#hot-dog-cost").text("Cost: " + hotDogCost);
+                $("#raccoonPerSecond").text("Raccoons per second: " + Math.ceil(raccoonPerSecond) + " captured");
+               
+                var newHotDogCost = Math.ceil(hotDog.basePrice * Math.pow(1.115, hotDog.numberOwned));
+                $('#hot-dog-cost').text("Cost: " + newHotDogCost);
+            }
+        }
+        function purchaseRaccoonBall() {
+            var ballCost = Math.ceil(raccoonBall.basePrice * Math.pow(1.15, raccconBall.numberOwned));
+
+            if (raccoon >= ballCost) {
+                console.log(raccoonPerSecond, raccconBall.rps)
+                
+                raccoon -= ballCost
+                
+                raccoonPerSecond += raccconBall.rps
+                console.log(raccoonPerSecond)
+          
+                raccconBall['numberOwned']++
+              
+                $("#raccoon-ball-count").text("Owned: " + raccoonBall.numberOwned);
+                $("#raccoon-ball-cost").text("Cost: " + ballCost);
+                $("#raccoonPerSecond").text("Raccoons per second: " + Math.ceil(raccoonPerSecond) + " captured");
+
+            
+                var newBallCost = Math.ceil(raccconBall.basePrice * Math.pow(1.1, raccconBall.numberOwned));
+                $('#raccoon-ball-cost').text("Cost: " + newBallCost);
+            }
+        }
+
+        function addAutoRaccoon() {
+         
+            raccoon += raccoonPerSecond
+           
+
+            $("#raccoon-amount").text("Raccoons: " + Math.floor(raccoon) + " captured");
+        }
+
+        function purchaseRaccoonFingers() {
+            console.log(raccoonFingersCost)
+            if (raccoon >= raccoonFingersCost) {
+                raccoon -= raccoonFingersCost
+                click *= 2
+                alert('YOU GOT SUPA FAST FINGIES NOW!')
+            }
+        }
+
+        function raccoonFingersAlert() {
+            alert('CATCH TWO TIMES MORE RACCOONS FASTER, COSTS 300')
+        }
+
+        function purchaseRaccoonFamily() {
+            console.log(raccoonFamilyCost)
+            if (raccoon >= raccoonFamilyCost) {
+                raccoon -= raccoonFamilyCost
+                alert('YOU GOT THE WHOLEEE FAM!')
+                marshmallow.rps *= 2
+                raccoonPlushy.rps *= 2
+                hotDog.rps *= 2
+                raccconBall.rps *= 2
+            }
+        }
+
+        function raccoonFamilyAlert() {
+            alert('RACCOON FAMILY HELPS PAY FOR MORE TINGS YOU BUY SO IT DOUBLES!!! COSTS 1000 ')
+        }
+        function purchaseChunkyRaccoon() {
+            console.log(chunkyRaccoonCost)
+            if (raccoon >= chunkyRaccoonCost) {
+                raccoon -= chunkyRaccoonCost
+                alert('YOU CAUGHT A THICC ONE!')
+               raccoonPerSecond*= 3
+                $("#raccoonPerSecond").text("Raccoons per second: " + Math.ceil(raccoonPerSecond) + " captured");
+            }
+        }
+
+        function chunkyRaccoonAlert() {
+            alert('BIG RACCOON MULTIPIES BY THREEEEE, COSTS 3000')
+        }
+
+        /* All code above here */
+    </script>
+</body>
+
+</html>
