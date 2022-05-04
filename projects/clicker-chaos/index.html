@@ -99,15 +99,15 @@
             numberOwned: 0,
             basePrice: 800,
         };
-        var raccconBall = {
+        var raccoonBall = {
             rps: 50,
             numberOwned: 0, 
             basePrice: 1500,
         };
 
-        var raccoonFingersCost = 300
-        var raccoonFamilyCost = 1000
-        var chunkyRaccoonCost = 3000
+        var raccoonFingersCost = 800
+        var raccoonFamilyCost = 2000
+        var chunkyRaccoonCost = 10000
 
 
         setInterval(addAutoRaccoon, 1000);
@@ -154,10 +154,10 @@
         }
 
         function purchaseRaccoonPlushy() {
-            var plushyCost = Math.ceil(raccoonPlushy.basePrice * Math.pow(1.15, raccoonPlushy.numberOwned));
+            var raccoonPlushyCost = Math.ceil(raccoonPlushy.basePrice * Math.pow(1.11, raccoonPlushy.numberOwned));
             console.log(raccoonPerSecond, raccoonPlushy.rps)
-            if (raccoon >= plushyCost) {
-                raccoon -= plushyCost
+            if (raccoon >= raccoonPlushyCost) {
+                raccoon -= raccoonPlushyCost
                 raccoonPerSecond += raccoonPlushy.rps
                 console.log(raccoonPerSecond)
                 raccoonPlushy['numberOwned']++
@@ -192,24 +192,24 @@
             }
         }
         function purchaseRaccoonBall() {
-            var ballCost = Math.ceil(raccoonBall.basePrice * Math.pow(1.15, raccconBall.numberOwned));
+            var ballCost = Math.ceil(raccoonBall.basePrice * Math.pow(1.15, raccoonBall.numberOwned));
 
             if (raccoon >= ballCost) {
-                console.log(raccoonPerSecond, raccconBall.rps)
+                console.log(raccoonPerSecond, raccoonBall.rps)
                 
                 raccoon -= ballCost
                 
-                raccoonPerSecond += raccconBall.rps
+                raccoonPerSecond += raccoonBall.rps
                 console.log(raccoonPerSecond)
           
-                raccconBall['numberOwned']++
+                raccoonBall['numberOwned']++
               
                 $("#raccoon-ball-count").text("Owned: " + raccoonBall.numberOwned);
                 $("#raccoon-ball-cost").text("Cost: " + ballCost);
                 $("#raccoonPerSecond").text("Raccoons per second: " + Math.ceil(raccoonPerSecond) + " captured");
 
             
-                var newBallCost = Math.ceil(raccconBall.basePrice * Math.pow(1.1, raccconBall.numberOwned));
+                var newBallCost = Math.ceil(raccoonBall.basePrice * Math.pow(1.1, raccoonBall.numberOwned));
                 $('#raccoon-ball-cost').text("Cost: " + newBallCost);
             }
         }
@@ -232,7 +232,7 @@
         }
 
         function raccoonFingersAlert() {
-            alert('CATCH TWO TIMES MORE RACCOONS FASTER, COSTS 300')
+            alert('CATCH TWO TIMES MORE RACCOONS FASTER, COSTS 800')
         }
 
         function purchaseRaccoonFamily() {
@@ -248,7 +248,7 @@
         }
 
         function raccoonFamilyAlert() {
-            alert('RACCOON FAMILY HELPS PAY FOR MORE TINGS YOU BUY SO IT DOUBLES!!! COSTS 1000 ')
+            alert('RACCOON FAMILY HELPS PAY FOR MORE TINGS YOU BUY SO IT DOUBLES!!! COSTS 2000 ')
         }
         function purchaseChunkyRaccoon() {
             console.log(chunkyRaccoonCost)
@@ -261,7 +261,7 @@
         }
 
         function chunkyRaccoonAlert() {
-            alert('BIG RACCOON MULTIPIES BY THREEEEE, COSTS 3000')
+            alert('BIG RACCOON MULTIPIES BY THREEEEE, COSTS 10000')
         }
 
         /* All code above here */
